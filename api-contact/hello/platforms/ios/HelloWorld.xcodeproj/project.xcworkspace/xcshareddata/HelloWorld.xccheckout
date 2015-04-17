@@ -10,31 +10,31 @@
 	<string>HelloWorld</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C81F65C6-38F8-471B-A3A5-0A349A4D55CA</key>
-		<string>ssh://github.com/jock91/muzzy.git</string>
+		<key>824E20B095F3D4189BEFD8D5D5F4406C2AC37093</key>
+		<string>https://github.com/jock91/IESA153a-muzzy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>api-contact/hello/platforms/ios/HelloWorld.xcodeproj/project.xcworkspace</string>
+	<string>api-contact/hello/platforms/ios/HelloWorld.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C81F65C6-38F8-471B-A3A5-0A349A4D55CA</key>
+		<key>824E20B095F3D4189BEFD8D5D5F4406C2AC37093</key>
 		<string>../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/jock91/muzzy.git</string>
+	<string>https://github.com/jock91/IESA153a-muzzy.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C81F65C6-38F8-471B-A3A5-0A349A4D55CA</string>
+	<string>824E20B095F3D4189BEFD8D5D5F4406C2AC37093</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C81F65C6-38F8-471B-A3A5-0A349A4D55CA</string>
+			<string>824E20B095F3D4189BEFD8D5D5F4406C2AC37093</string>
 			<key>IDESourceControlWCCName</key>
-			<string>muzzy</string>
+			<string>IESA153a-muzzy</string>
 		</dict>
 	</array>
 </dict>

@@ -34,30 +34,32 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-            $("#load").click(function(){
-                var search = $("#mysearch").val();
+        $("#mypos").click(function(){
+            var options = { enableHighAccuracy: true };
+        watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
 
-               function onSuccess(contacts) {
-                //alert(contacts.length);
-                    for (var i = 0; i < contacts.length; i++) {
-                        $("#search").append( "Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "<br />" );
-                    }
-                };
+        function onSuccess(position) {
+            var element = document.getElementById('geolocation');
+            element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
+                                'Longitude: ' + position.coords.longitude     + '<br />' +
+                                '<hr />';
+        }
 
-                function onError(contactError) {
-                    alert('onError!');
-                };
+    function clearWatch() {
+        if (watchID != null) {
+            navigator.geolocation.clearWatch(watchID);
+            watchID = null;
+        }
+    }
 
-                var options = new ContactFindOptions();
-                options.filter = search;
-                options.multiple = true; 
-                filter = ["name"];
-                navigator.contacts.find(filter, onSuccess, onError, options);
-
-            });
-
-            
-
+        // onError Callback receives a PositionError object
+        //
+        function onError(error) {
+          alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+        }
+        });
+        
     
     
     },
