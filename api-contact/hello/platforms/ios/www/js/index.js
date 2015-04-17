@@ -35,12 +35,12 @@ var app = {
     onDeviceReady: function() {
 
             $("#load").click(function(){
-                 var naming = $("#name").val();
-                var mail = $("#email").val();
+                var search = $("#mysearch").val();
 
                function onSuccess(contacts) {
-                     for (var i=0; i<contacts.length; i++) {
-                        $("#search").html("Nom = <b>" + contacts[i].name + "</b>");
+                //alert(contacts.length);
+                    for (var i = 0; i < contacts.length; i++) {
+                        $("#search").append( "Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "<br />" );
                     }
                 };
 
@@ -48,42 +48,15 @@ var app = {
                     alert('onError!');
                 };
 
-                // Rechercher tous les contacts qui ont 'Bob' dans l'un de leurs champs de nom
                 var options = new ContactFindOptions();
-                options.filter = naming; 
-                var fields = ["displayName", "name"];
-                navigator.contacts.find(fields, onSuccess, onError, options);
+                options.filter = search;
+                options.multiple = true; 
+                filter = ["name"];
+                navigator.contacts.find(filter, onSuccess, onError, options);
+
             });
-            $("#save").click(function(){
-                var naming = $("#name").val();
-                var mail = $("#email").val();
 
-                //alert(name +"  "+mail);
-
-                function onSuccess(contact) {
-                    alert("Enregistrement réussi");
-                };
-
-                function onError(contactError) {
-                    alert("Erreur = " + contactError.code);
-                };
-
-
-
-                // Créer un nouvel objet contact
-                var contact = navigator.contacts.create();
-                contact.displayName = "Plombier";
-                contact.nickname = "Plombier";      // Préciser les deux propriétés pour que cela marche sur tous les mobiles
-
-                // Renseigner quelques champs
-                var name = new ContactName();
-                name.givenName = naming;
-                name.familyName = mail;
-                contact.name = name;
-
-                // Enregistrer dans la base du mobile
-                contact.save(onSuccess,onError);
-            });
+            
 
     
     
