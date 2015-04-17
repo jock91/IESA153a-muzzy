@@ -40,8 +40,20 @@ var app = {
                function onSuccess(contacts) {
                 //alert(contacts.length);
                     for (var i = 0; i < contacts.length; i++) {
-                        $("#search").append( "Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "<br />" );
+                        $("#search").append( "<p class='searching'>Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "</p>" );
                     }
+                    //alert($(".searching").length);
+                    $(".searching").click( function(){
+                        //alert('toto');
+                        $(this).css({"color" : "#008F00"}).addClass("selected");
+                        $("#send").show();
+                    });
+
+                    $('#send').click(function(){
+                        $("#search").html("");
+                        $(this).hide();
+                    });
+
                 };
 
                 function onError(contactError) {
@@ -53,9 +65,9 @@ var app = {
                 options.multiple = true; 
                 filter = ["name"];
                 navigator.contacts.find(filter, onSuccess, onError, options);
-
             });
 
+             
             
 
     
@@ -71,6 +83,9 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        
+
     }
 };
 
