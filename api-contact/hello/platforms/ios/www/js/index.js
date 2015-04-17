@@ -34,23 +34,39 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-        $("#mypos").click(function(){
-            var options = { enableHighAccuracy: true };
-        watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+               function onSuccess(contacts) {
+                //alert(contacts.length);
+                    for (var i = 0; i < contacts.length; i++) {
+                        $("#search").append( "<p class='searching'>Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "</p>" );
+                    }
+                    //alert($(".searching").length);
+                    $(".searching").click( function(){
+                        //alert('toto');
+                        $(this).css({"color" : "#008F00"}).addClass("selected");
+                        $("#send").show();
+                    });
 
-        function onSuccess(position) {
-            var element = document.getElementById('geolocation');
-            element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
-                                'Longitude: ' + position.coords.longitude     + '<br />' +
-                                '<hr />';
-        }
+                    $('#send').click(function(){
+                        $("#search").html("");
+                        $(this).hide();
+                    });
 
-    function clearWatch() {
-        if (watchID != null) {
-            navigator.geolocation.clearWatch(watchID);
-            watchID = null;
-        }
-    }
+                };
+
+                function onError(contactError) {
+                    alert('onError!');
+                };
+
+                var options = new ContactFindOptions();
+                options.filter = search;
+                options.multiple = true; 
+                filter = ["name"];
+                navigator.contacts.find(filter, onSuccess, onError, options);
+            });
+
+             
+            
+>>>>>>> 671a09a0cd835b6bb9bbee1ebaa2d5e3d9382907
 
         // onError Callback receives a PositionError object
         //
@@ -73,6 +89,9 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        
+
     }
 };
 
