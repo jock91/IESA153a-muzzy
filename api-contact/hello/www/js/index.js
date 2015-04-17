@@ -34,9 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-            $("#load").click(function(){
-                var search = $("#mysearch").val();
-
+     
                function onSuccess(contacts) {
                 //alert(contacts.length);
                     for (var i = 0; i < contacts.length; i++) {
@@ -71,6 +69,14 @@ var app = {
              
             
 
+        // onError Callback receives a PositionError object
+        //
+        function onError(error) {
+          alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+        }
+        });
+        
     
     
     },

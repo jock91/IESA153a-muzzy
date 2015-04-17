@@ -21,20 +21,7 @@
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+     background:#04b3c3;
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -47,6 +34,7 @@ body {
 
 /* Portrait layout (default) */
 .app {
+	background: #04b3c3;
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
@@ -88,12 +76,12 @@ h1 {
 }
 
 .event.listening {
-    background-color:#333333;
+    background-color:#04b3c3;
     display:block;
 }
 
 .event.received {
-    background-color:#4B946A;
+    background-color:#04b3c3;
     display:none;
 }
 
@@ -112,4 +100,21 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+.photo, .geo{
+	background: #F27062;
+	padding: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 20px;
+	cursor: pointer;
+	border: 4px solid #fff;
+	font-weight: bold;
+	width: 200px;
+
+}
+
+.geo {
+	background: #17A867;
+	
 }
