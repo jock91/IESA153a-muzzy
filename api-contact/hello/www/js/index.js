@@ -52,6 +52,7 @@ var app = {
                     $('#send').click(function(){
                         $("#search").html("");
                         $(this).hide();
+                        
                     });
 
                 };
