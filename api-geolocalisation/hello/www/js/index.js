@@ -41,7 +41,7 @@ var app = {
         $("#load").click(function(){
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
             function onSuccess(position) {
-            var element = document.getElementById('geolocation');
+            var element = document.getElementById('geolocation'); 
             element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                                 'Longitude: '          + position.coords.longitude             + '<br />' +
                                 'Altitude: '           + position.coords.altitude              + '<br />';
