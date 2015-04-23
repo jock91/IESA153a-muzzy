@@ -30,13 +30,24 @@
     <body>
         <div class="app">
             
-            <button type="button" class="photo">Se prendre en photo</button>
+            <button type="button" class="photo" >Se prendre en photo</button>
             <button type="button" class="geo">Se géolocaliser</button>
+            <input type="text" id="mysearch"></input>
+            <button type="button" id="load">Chercher un contact</button>
+            
             <div id="search"></div>
+            <button type="submit" id="send" style="display:none;">Envoyer</button>
         </div>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="ga.js"></script>
+        <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-62201131-1']);
+        _gaq.push(['_setDomainName', 'none']);
+        _gaq.push(['_trackPageview', 'index.html']);
+        </script>
 
     </body>
 </html>

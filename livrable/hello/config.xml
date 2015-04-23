@@ -55,6 +55,10 @@
 						<feature name="Camera">
 						    <param name="ios-package" value="CDVCamera" />
 						</feature>
+						<feature name="Geolocation">
+						    <param name="ios-package" value="CDVLocation" />
+						</feature>
+
 
 		 </platform>
 

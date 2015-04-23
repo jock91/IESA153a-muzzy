@@ -37,14 +37,20 @@ var app = {
 
 
         // onSuccess Geolocation
-        //
         $("#load").click(function(){
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
             function onSuccess(position) {
+<<<<<<< HEAD
             var element = document.getElementById('geolocation'); 
             element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                                 'Longitude: '          + position.coords.longitude             + '<br />' +
                                 'Altitude: '           + position.coords.altitude              + '<br />';
+=======
+                var element = document.getElementById('geolocation');
+                element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                                    'Longitude: '          + position.coords.longitude             + '<br />' +
+                                    'Altitude: '           + position.coords.altitude              + '<br />';
+>>>>>>> e5834a9837200e6c90d960a1ef36a86baa4e3bfc
             };
 
 
