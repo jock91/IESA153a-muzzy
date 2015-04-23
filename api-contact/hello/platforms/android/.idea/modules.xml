@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../../livrable/hello/platforms/android/CordovaLib/CordovaLib1.iml" filepath="$PROJECT_DIR$/../../../../livrable/hello/platforms/android/CordovaLib/CordovaLib1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../livrable/hello/platforms/android/android.iml" filepath="$PROJECT_DIR$/../../../../livrable/hello/platforms/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
     </modules>
   </component>
 </project>

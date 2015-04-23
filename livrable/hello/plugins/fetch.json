@@ -34,5 +34,11 @@
             "type": "registry",
             "id": "org.apache.cordova.contacts"
         }
+    },
+    "org.apache.cordova.camera": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.camera"
+        }
     }
 }

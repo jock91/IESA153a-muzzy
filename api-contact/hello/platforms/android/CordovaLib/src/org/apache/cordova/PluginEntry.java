@@ -18,38 +18,43 @@
  */
 package org.apache.cordova;
 
+import java.util.List;
+
 import org.apache.cordova.CordovaPlugin;
 
 /**
  * This class represents a service entry object.
  */
-public final class PluginEntry {
+public class PluginEntry {
 
     /**
      * The name of the service that this plugin implements
      */
-    public final String service;
+    public String service;
 
     /**
      * The plugin class name that implements the service.
      */
-    public final String pluginClass;
+    public String pluginClass;
 
     /**
      * The pre-instantiated plugin to use for this entry.
      */
-    public final CordovaPlugin plugin;
+    public CordovaPlugin plugin;
 
     /**
      * Flag that indicates the plugin object should be created when PluginManager is initialized.
      */
-    public final boolean onload;
+    public boolean onload;
+
+    private List<String> urlFilters;
+
 
     /**
      * Constructs with a CordovaPlugin already instantiated.
      */
     public PluginEntry(String service, CordovaPlugin plugin) {
-        this(service, plugin.getClass().getName(), true, plugin);
+        this(service, plugin.getClass().getName(), true, plugin, null);
     }
 
     /**
@@ -58,13 +63,27 @@ public final class PluginEntry {
      * @param onload                Create plugin object when HTML page is loaded
      */
     public PluginEntry(String service, String pluginClass, boolean onload) {
-        this(service, pluginClass, onload, null);
+        this(service, pluginClass, onload, null, null);
     }
-
-    private PluginEntry(String service, String pluginClass, boolean onload, CordovaPlugin plugin) {
+    
+    @Deprecated // urlFilters are going away
+    public PluginEntry(String service, String pluginClass, boolean onload, List<String> urlFilters) {
         this.service = service;
         this.pluginClass = pluginClass;
         this.onload = onload;
+        this.urlFilters = urlFilters;
+        plugin = null;
+    }
+
+    private PluginEntry(String service, String pluginClass, boolean onload, CordovaPlugin plugin, List<String> urlFilters) {
+        this.service = service;
+        this.pluginClass = pluginClass;
+        this.onload = onload;
+        this.urlFilters = urlFilters;
         this.plugin = plugin;
+    }
+
+    public List<String> getUrlFilters() {
+        return urlFilters;
     }
 }
