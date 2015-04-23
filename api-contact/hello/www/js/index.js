@@ -36,6 +36,7 @@ var app = {
 
 
                 $("#load").click(function(){
+                    alert("toto");
                     var search = $("#mysearch").val();
                     function onSuccess(contacts) {
                         //alert(contacts.length);
