@@ -64,16 +64,6 @@ var app = {
                     options.multiple = true; 
                     filter = ["name"];
                     navigator.contacts.find(filter, onSuccess, onError, options);
-
-             
-            
-
-                    // onError Callback receives a PositionError object
-                    //
-                    function onError(error) {
-                      alert('code: '    + error.code    + '\n' +
-                            'message: ' + error.message + '\n');
-                    }
                 });
 
     
