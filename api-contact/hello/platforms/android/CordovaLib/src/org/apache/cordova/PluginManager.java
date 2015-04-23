@@ -18,13 +18,18 @@
  */
 package org.apache.cordova;
 
-import java.util.Collection;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
+import java.util.List;
 
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginEntry;
+import org.apache.cordova.PluginResult;
 import org.json.JSONException;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Debug;
 import android.util.Log;
@@ -40,35 +45,39 @@ public class PluginManager {
     private static final int SLOW_EXEC_WARNING_THRESHOLD = Debug.isDebuggerConnected() ? 60 : 16;
 
     // List of service entries
-    private final LinkedHashMap<String, CordovaPlugin> pluginMap = new LinkedHashMap<String, CordovaPlugin>();
-    private final LinkedHashMap<String, PluginEntry> entryMap = new LinkedHashMap<String, PluginEntry>();
+    private final HashMap<String, CordovaPlugin> pluginMap = new HashMap<String, CordovaPlugin>();
+    private final HashMap<String, PluginEntry> entryMap = new HashMap<String, PluginEntry>();
 
     private final CordovaInterface ctx;
     private final CordovaWebView app;
-    private boolean isInitialized;
 
-    public PluginManager(CordovaWebView cordovaWebView, CordovaInterface cordova, Collection<PluginEntry> pluginEntries) {
+    // Stores mapping of Plugin Name -> <url-filter> values.
+    // Using <url-filter> is deprecated.
+    protected HashMap<String, List<String>> urlMap = new HashMap<String, List<String>>();
+
+    @Deprecated
+    PluginManager(CordovaWebView cordovaWebView, CordovaInterface cordova) {
+        this(cordovaWebView, cordova, null);
+    }
+
+    PluginManager(CordovaWebView cordovaWebView, CordovaInterface cordova, List<PluginEntry> pluginEntries) {
         this.ctx = cordova;
         this.app = cordovaWebView;
+        if (pluginEntries == null) {
+            ConfigXmlParser parser = new ConfigXmlParser();
+            parser.parse(ctx.getActivity());
+            pluginEntries = parser.getPluginEntries();
+        }
         setPluginEntries(pluginEntries);
     }
 
-    public Collection<PluginEntry> getPluginEntries() {
-        return entryMap.values();
-    }
-
-    public void setPluginEntries(Collection<PluginEntry> pluginEntries) {
-        if (isInitialized) {
-            this.onPause(false);
-            this.onDestroy();
-            pluginMap.clear();
-            entryMap.clear();
-        }
+    public void setPluginEntries(List<PluginEntry> pluginEntries) {
+        this.onPause(false);
+        this.onDestroy();
+        pluginMap.clear();
+        urlMap.clear();
         for (PluginEntry entry : pluginEntries) {
             addService(entry);
-        }
-        if (isInitialized) {
-            startupPlugins();
         }
     }
 
@@ -77,17 +86,29 @@ public class PluginManager {
      */
     public void init() {
         LOG.d(TAG, "init()");
-        isInitialized = true;
         this.onPause(false);
         this.onDestroy();
         pluginMap.clear();
         this.startupPlugins();
     }
 
+    @Deprecated
+    public void loadPlugins() {
+    }
+
+    /**
+     * Delete all plugin objects.
+     */
+    @Deprecated // Should not be exposed as public.
+    public void clearPluginObjects() {
+        pluginMap.clear();
+    }
+
     /**
      * Create plugins objects that have onload set.
      */
-    private void startupPlugins() {
+    @Deprecated // Should not be exposed as public.
+    public void startupPlugins() {
         for (PluginEntry entry : entryMap.values()) {
             // Add a null entry to for each non-startup plugin to avoid ConcurrentModificationException
             // When iterating plugins.
@@ -146,6 +167,11 @@ public class PluginManager {
         }
     }
 
+    @Deprecated
+    public void exec(String service, String action, String callbackId, String jsonArgs, boolean async) {
+        exec(service, action, callbackId, jsonArgs);
+    }
+
     /**
      * Get the plugin object that implements the service.
      * If the plugin object does not already exist, then create it.
@@ -166,7 +192,7 @@ public class PluginManager {
             } else {
                 ret = instantiatePlugin(pe.pluginClass);
             }
-            ret.privateInitialize(service, ctx, app, app.getPreferences());
+            ret.privateInitialize(ctx, app, app.getPreferences());
             pluginMap.put(service, ret);
         }
         return ret;
@@ -192,10 +218,15 @@ public class PluginManager {
      */
     public void addService(PluginEntry entry) {
         this.entryMap.put(entry.service, entry);
+        List<String> urlFilters = entry.getUrlFilters();
+        if (urlFilters != null) {
+            urlMap.put(entry.service, urlFilters);
+        }
         if (entry.plugin != null) {
-            entry.plugin.privateInitialize(entry.service, ctx, app, app.getPreferences());
+            entry.plugin.privateInitialize(ctx, app, app.getPreferences());
             pluginMap.put(entry.service, entry.plugin);
         }
+
     }
 
     /**
@@ -225,7 +256,7 @@ public class PluginManager {
      */
     public boolean onReceivedHttpAuthRequest(CordovaWebView view, ICordovaHttpAuthHandler handler, String host, String realm) {
         for (CordovaPlugin plugin : this.pluginMap.values()) {
-            if (plugin != null && plugin.onReceivedHttpAuthRequest(app, handler, host, realm)) {
+            if (plugin != null && plugin.onReceivedHttpAuthRequest(view, handler, host, realm)) {
                 return true;
             }
         }
@@ -244,7 +275,7 @@ public class PluginManager {
      */
     public boolean onReceivedClientCertRequest(CordovaWebView view, ICordovaClientCertRequest request) {
         for (CordovaPlugin plugin : this.pluginMap.values()) {
-            if (plugin != null && plugin.onReceivedClientCertRequest(app, request)) {
+            if (plugin != null && plugin.onReceivedClientCertRequest(view, request)) {
                 return true;
             }
         }
@@ -260,28 +291,6 @@ public class PluginManager {
         for (CordovaPlugin plugin : this.pluginMap.values()) {
             if (plugin != null) {
                 plugin.onResume(multitasking);
-            }
-        }
-    }
-
-    /**
-     * Called when the activity is becoming visible to the user.
-     */
-    public void onStart() {
-        for (CordovaPlugin plugin : this.pluginMap.values()) {
-            if (plugin != null) {
-                plugin.onStart();
-            }
-        }
-    }
-
-    /**
-     * Called when the activity is no longer visible to the user.
-     */
-    public void onStop() {
-        for (CordovaPlugin plugin : this.pluginMap.values()) {
-            if (plugin != null) {
-                plugin.onStop();
             }
         }
     }
@@ -305,15 +314,19 @@ public class PluginManager {
      * @return                  Object to stop propagation or null
      */
     public Object postMessage(String id, Object data) {
+        Object obj = this.ctx.onMessage(id, data);
+        if (obj != null) {
+            return obj;
+        }
         for (CordovaPlugin plugin : this.pluginMap.values()) {
             if (plugin != null) {
-                Object obj = plugin.onMessage(id, data);
+                obj = plugin.onMessage(id, data);
                 if (obj != null) {
                     return obj;
                 }
             }
         }
-        return ctx.onMessage(id, data);
+        return null;
     }
 
     /**
@@ -328,126 +341,29 @@ public class PluginManager {
     }
 
     /**
-     * Called when the webview is going to request an external resource.
-     *
-     * This delegates to the installed plugins, and returns true/false for the
-     * first plugin to provide a non-null result.  If no plugins respond, then
-     * the default policy is applied.
-     *
-     * @param url       The URL that is being requested.
-     * @return          Returns true to allow the resource to load,
-     *                  false to block the resource.
-     */
-    public boolean shouldAllowRequest(String url) {
-        for (PluginEntry entry : this.entryMap.values()) {
-            CordovaPlugin plugin = pluginMap.get(entry.service);
-            if (plugin != null) {
-                Boolean result = plugin.shouldAllowRequest(url);
-                if (result != null) {
-                    return result;
-                }
-            }
-        }
-
-        // Default policy:
-        if (url.startsWith("blob:") || url.startsWith("data:") || url.startsWith("about:blank")) {
-            return true;
-        }
-        // TalkBack requires this, so allow it by default.
-        if (url.startsWith("https://ssl.gstatic.com/accessibility/javascript/android/")) {
-            return true;
-        }
-        if (url.startsWith("file://")) {
-            //This directory on WebKit/Blink based webviews contains SQLite databases!
-            //DON'T CHANGE THIS UNLESS YOU KNOW WHAT YOU'RE DOING!
-            return !url.contains("/app_webview/");
-        }
-        return false;
-    }
-
-    /**
-     * Called when the webview is going to change the URL of the loaded content.
-     *
-     * This delegates to the installed plugins, and returns true/false for the
-     * first plugin to provide a non-null result.  If no plugins respond, then
-     * the default policy is applied.
-     *
-     * @param url       The URL that is being requested.
-     * @return          Returns true to allow the navigation,
-     *                  false to block the navigation.
-     */
-    public boolean shouldAllowNavigation(String url) {
-        for (PluginEntry entry : this.entryMap.values()) {
-            CordovaPlugin plugin = pluginMap.get(entry.service);
-            if (plugin != null) {
-                Boolean result = plugin.shouldAllowNavigation(url);
-                if (result != null) {
-                    return result;
-                }
-            }
-        }
-
-        // Default policy:
-        return url.startsWith("file://") || url.startsWith("about:blank");
-    }
-
-
-    /**
-     * Called when the webview is requesting the exec() bridge be enabled.
-     */
-    public boolean shouldAllowBridgeAccess(String url) {
-        for (PluginEntry entry : this.entryMap.values()) {
-            CordovaPlugin plugin = pluginMap.get(entry.service);
-            if (plugin != null) {
-                Boolean result = plugin.shouldAllowBridgeAccess(url);
-                if (result != null) {
-                    return result;
-                }
-            }
-        }
-
-        // Default policy:
-        return url.startsWith("file://");
-    }
-
-    /**
-     * Called when the webview is going not going to navigate, but may launch
-     * an Intent for an URL.
-     *
-     * This delegates to the installed plugins, and returns true/false for the
-     * first plugin to provide a non-null result.  If no plugins respond, then
-     * the default policy is applied.
-     *
-     * @param url       The URL that is being requested.
-     * @return          Returns true to allow the URL to launch an intent,
-     *                  false to block the intent.
-     */
-    public Boolean shouldOpenExternalUrl(String url) {
-        for (PluginEntry entry : this.entryMap.values()) {
-            CordovaPlugin plugin = pluginMap.get(entry.service);
-            if (plugin != null) {
-                Boolean result = plugin.shouldOpenExternalUrl(url);
-                if (result != null) {
-                    return result;
-                }
-            }
-        }
-        // Default policy:
-        // External URLs are not allowed
-        return false;
-    }
-
-    /**
      * Called when the URL of the webview changes.
      *
      * @param url               The URL that is being changed to.
      * @return                  Return false to allow the URL to load, return true to prevent the URL from loading.
      */
     public boolean onOverrideUrlLoading(String url) {
+        // Deprecated way to intercept URLs. (process <url-filter> tags).
+        // Instead, plugins should not include <url-filter> and instead ensure
+        // that they are loaded before this function is called (either by setting
+        // the onload <param> or by making an exec() call to them)
         for (PluginEntry entry : this.entryMap.values()) {
-            CordovaPlugin plugin = pluginMap.get(entry.service);
-            if (plugin != null && plugin.onOverrideUrlLoading(url)) {
-                return true;
+            List<String> urlFilters = urlMap.get(entry.service);
+            if (urlFilters != null) {
+                for (String s : urlFilters) {
+                    if (url.startsWith(s)) {
+                        return getPlugin(entry.service).onOverrideUrlLoading(url);
+                    }
+                }
+            } else {
+                CordovaPlugin plugin = pluginMap.get(entry.service);
+                if (plugin != null && plugin.onOverrideUrlLoading(url)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -494,18 +410,5 @@ public class PluginManager {
             System.out.println("Error adding plugin " + className + ".");
         }
         return ret;
-    }
-
-    /**
-     * Called by the system when the device configuration changes while your activity is running.
-     *
-     * @param newConfig		The new device configuration
-     */
-    public void onConfigurationChanged(Configuration newConfig) {
-        for (CordovaPlugin plugin : this.pluginMap.values()) {
-            if (plugin != null) {
-                plugin.onConfigurationChanged(newConfig);
-            }
-        }
     }
 }

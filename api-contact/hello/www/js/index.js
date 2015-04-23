@@ -34,52 +34,55 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-     
-               function onSuccess(contacts) {
-                //alert(contacts.length);
-                    for (var i = 0; i < contacts.length; i++) {
-                        $("#search").append( "<p class='searching'>Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "</p>" );
-                    }
-                    //alert($(".searching").length);
-                    $(".searching").click( function(){
-                        //alert('toto');
-                        $(this).css({"color" : "#008F00"}).addClass("selected");
-                        $("#send").show();
-                    });
 
-                    $('#send').click(function(){
-                        $("#search").html("");
-                        $(this).hide();
-                        
-                    });
- 
- 
-                };
+                $("#load").click(function(){
+                    var search = $("#mysearch").val();
+                    function onSuccess(contacts) {
+                        //alert(contacts.length);
+                        for (var i = 0; i < contacts.length; i++) {
+                            $("#search").append( "<p class='searching'>Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "</p>" );
+                        }
+                        //alert($(".searching").length);
+                        $(".searching").click( function(){
+                            //alert('toto');
+                            $(this).css({"color" : "#008F00"}).addClass("selected");
+                            $("#send").show();
+                        });
 
-                function onError(contactError) {
-                    alert('onError!');
-                };
+                        $('#send').click(function(){
+                            $("#search").html("");
+                            $(this).hide();
+                            
+                        });
+                    };
 
-                var options = new ContactFindOptions();
-                options.filter = search;
-                options.multiple = true; 
-                filter = ["name"];
-                navigator.contacts.find(filter, onSuccess, onError, options);
-            });
+                    function onError(contactError) {
+                        alert('onError!');
+                    };
+
+                    var options = new ContactFindOptions();
+                    options.filter = search;
+                    options.multiple = true; 
+                    filter = ["name"];
+                    navigator.contacts.find(filter, onSuccess, onError, options);
 
              
             
 
-        // onError Callback receives a PositionError object
-        //
-        function onError(error) {
-          alert('code: '    + error.code    + '\n' +
-                'message: ' + error.message + '\n');
-        }
-        });
-        
-    
-    
+                    // onError Callback receives a PositionError object
+                    //
+                    function onError(error) {
+                      alert('code: '    + error.code    + '\n' +
+                            'message: ' + error.message + '\n');
+                    }
+                });
+
+
+                
+                
+
+     
+               
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
