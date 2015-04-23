@@ -50,7 +50,7 @@
 						<splash src="resources/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
 
 						<feature name="Contacts">
-								<param name="ios-package" value="CDVContacts" />
+							<param name="ios-package" value="CDVContacts" />
 						</feature>
 						<feature name="Camera">
 						    <param name="ios-package" value="CDVCamera" />
@@ -58,6 +58,7 @@
 						<feature name="Geolocation">
 						    <param name="ios-package" value="CDVLocation" />
 						</feature>
+						
 
 
 		 </platform>
