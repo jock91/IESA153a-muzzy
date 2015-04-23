@@ -86,6 +86,14 @@ var app = {
 
             });
 
+            $("#lang").click(function(){
+                //alert('toto');
+                navigator.globalization.getPreferredLanguage(
+                    function (language) {alert('Language of smartphone : ' + language.value + '\n');},
+                    function () {alert('Error getting language\n');}
+              );
+            });
+
     
     
     },

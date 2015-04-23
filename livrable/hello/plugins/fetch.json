@@ -46,5 +46,11 @@
             "type": "registry",
             "id": "org.apache.cordova.geolocation"
         }
+    },
+    "org.apache.cordova.globalization": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.globalization"
+        }
     }
 }
