@@ -10,7 +10,7 @@
                     "CoreGraphics.framework": [
                         {
                             "xml": false,
-                            "count": 2
+                            "count": 4
                         }
                     ],
                     "SystemConfiguration.framework": [
@@ -34,12 +34,27 @@
                     "CoreLocation.framework": [
                         {
                             "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "ImageIO.framework": [
+                        {
+                            "xml": true,
                             "count": 1
                         }
                     ],
-                    "ImageIO.framework": [],
-                    "AssetsLibrary.framework": [],
-                    "MobileCoreServices.framework": []
+                    "AssetsLibrary.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "MobileCoreServices.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ]
                 }
             },
             "config.xml": {
@@ -76,6 +91,14 @@
                         {
                             "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"ios-package\" value=\"CDVCamera\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -85,7 +108,7 @@
                     "NSLocationWhenInUseUsageDescription": [
                         {
                             "xml": "<string />",
-                            "count": 1
+                            "count": 2
                         }
                     ]
                 }
@@ -115,6 +138,9 @@
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         },
         "org.apache.cordova.globalization": {
+            "PACKAGE_NAME": "ch.inagua.training.phonegap"
+        },
+        "org.apache.cordova.camera": {
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         }
     },
