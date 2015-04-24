@@ -33,6 +33,9 @@
     <feature name="Contacts">
         <param name="ios-package" value="CDVContacts" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <icon height="180" src="resources/icons/icon-60@3x.png" width="180" />
     <icon height="60" src="resources/icons/icon-60.png" width="60" />
     <icon height="120" src="resources/icons/icon-60@2x.png" width="120" />
@@ -67,5 +70,4 @@
 		</author>
     <content src="index.html" />
     <access origin="*" />
-    <engine name="ios" version="3.8.0" />
 </widget>

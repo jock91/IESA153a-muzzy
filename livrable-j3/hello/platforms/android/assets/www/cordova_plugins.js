@@ -1,13 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/org.apache.cordova.battery-status/www/battery.js",
-        "id": "org.apache.cordova.battery-status.battery",
-        "clobbers": [
-            "navigator.battery"
-        ]
-    },
-    {
         "file": "plugins/org.apache.cordova.contacts/www/contacts.js",
         "id": "org.apache.cordova.contacts.contacts",
         "clobbers": [
@@ -140,12 +133,18 @@ module.exports = [
         "clobbers": [
             "CameraPopoverHandle"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
+        "id": "org.apache.cordova.statusbar.statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.battery-status": "0.2.12",
     "org.apache.cordova.console": "0.2.13",
     "org.apache.cordova.contacts": "0.2.16",
     "org.apache.cordova.device": "0.3.0",
@@ -153,7 +152,8 @@ module.exports.metadata =
     "org.apache.cordova.globalization": "0.3.4",
     "org.apache.cordova.network-information": "0.2.15",
     "org.apache.cordova.splashscreen": "1.0.0",
-    "org.apache.cordova.camera": "0.3.6"
+    "org.apache.cordova.camera": "0.3.6",
+    "org.apache.cordova.statusbar": "0.1.10"
 }
 // BOTTOM OF METADATA
 });

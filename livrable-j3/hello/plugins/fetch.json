@@ -17,12 +17,6 @@
             "id": "org.apache.cordova.network-information"
         }
     },
-    "org.apache.cordova.battery-status": {
-        "source": {
-            "type": "registry",
-            "id": "org.apache.cordova.battery-status"
-        }
-    },
     "org.apache.cordova.console": {
         "source": {
             "type": "registry",
@@ -53,6 +47,14 @@
         "source": {
             "type": "registry",
             "id": "org.apache.cordova.camera"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.statusbar"
         },
         "is_top_level": true,
         "variables": {}

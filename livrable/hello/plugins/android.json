@@ -49,6 +49,14 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -72,6 +80,9 @@
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         },
         "org.apache.cordova.splashscreen": {
+            "PACKAGE_NAME": "ch.inagua.training.phonegap"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         }
     },

@@ -30,6 +30,12 @@
                             "xml": true,
                             "count": 1
                         }
+                    ],
+                    "CoreLocation.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -59,6 +65,20 @@
                         {
                             "xml": "<feature name=\"Contacts\"><param name=\"ios-package\" value=\"CDVContacts\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationWhenInUseUsageDescription": [
+                        {
+                            "xml": "<string />",
+                            "count": 1
                         }
                     ]
                 }
@@ -82,6 +102,9 @@
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         },
         "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "ch.inagua.training.phonegap"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         }
     },
