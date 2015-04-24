@@ -79,7 +79,24 @@ var app = {
             $("#lang").click(function(){
                 
                  navigator.globalization.getPreferredLanguage(
-                    function (language) {alert('language: ' + language.value + '\n');},
+                    function (language) {
+                        alert('votre langue: ' + language.value + '\n');
+
+                        if ($("#lang").hasClass("anglais")) {
+                            $("#lang").removeClass("anglais").text("Changer de langue");
+                            $(".photo").text("Ajouter une photo");
+                            $(".geo").text("Se géolocaliser");
+                            $("#load").text("Chercher des contacts");
+                        }else {
+                            $(".photo").text("Add picture");
+                            $(".geo").text("To geolocate");
+                            $("#lang").addClass("anglais").text("Change language");
+                            $("#load").text("search contacts");
+                        }
+
+                        
+                        
+                    },
                     function () {alert('Error getting language\n');}
                 );
             });

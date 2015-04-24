@@ -1,0 +1,60 @@
+{
+    "org.apache.cordova.splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.splashscreen"
+        }
+    },
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device"
+        }
+    },
+    "org.apache.cordova.network-information": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.network-information"
+        }
+    },
+    "org.apache.cordova.battery-status": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.battery-status"
+        }
+    },
+    "org.apache.cordova.console": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.console"
+        }
+    },
+    "org.apache.cordova.contacts": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.contacts"
+        }
+    },
+    "org.apache.cordova.geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.geolocation"
+        }
+    },
+    "org.apache.cordova.globalization": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.globalization"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-camera"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
