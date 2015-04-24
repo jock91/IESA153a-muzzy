@@ -63,19 +63,7 @@ var app = {
                 });
 
 
-            $("#geo").click(function(){
-                navigator.geolocation.getCurrentPosition(onSuccess, onError);
-                function onSuccess(position) {
-                    var element = document.getElementById('geolocation');
-                    element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                                        'Longitude: '          + position.coords.longitude             + '<br />' +
-                                        'Altitude: '           + position.coords.altitude              + '<br />';
-                };
-                function onError(error) {
-                    alert('code: '    + error.code    + '\n' +
-                          'message: ' + error.message + '\n');
-                }
-            });
+           
 
             $("#lang").click(function(){
                 
@@ -101,6 +89,40 @@ var app = {
                     function () {alert('Error getting language\n');}
                 );
             });
+
+                $("#geo").click(function(){
+                    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+          
+                    function onSuccess(position) {
+
+                    var element = document.getElementById('geolocation'),
+                        db     = openDatabase('mydb', '1.0', 'Test DB', 10000),
+                        msg    = '',
+                        status = document.getElementById('old-geoloc');
+                    element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                                        'Longitude: '          + position.coords.longitude             + '<br />' +
+                                        'Altitude: '           + position.coords.altitude              + '<br />';
+
+                        db.transaction(function (tx) {
+                          tx.executeSql('CREATE TABLE IF NOT EXISTS GEOLOCALISATION (id, latitude, longitude, altitude)');
+                          tx.executeSql('INSERT INTO GEOLOCALISATION (id, latitude, longitude, altitude)) VALUES (1, "2,36, "7,645", "0")');
+                          tx.executeSql('INSERT INTO GEOLOCALISATION (id, latitude, longitude, altitude)) VALUES (2, "3048, "79,45", "1")');
+                          msg = '<p>Geolocalition message created and row inserted.</p>';
+                          alert("position sauvegarder");
+                          status.innerHTML =  msg;
+                        });
+
+                    };
+
+
+                    // onError Callback receives a PositionError object
+                    //
+                    function onError(error) {
+                        alert('code: '    + error.code    + '\n' +
+                              'message: ' + error.message + '\n');
+                    }
+
+        });
 
 
     
