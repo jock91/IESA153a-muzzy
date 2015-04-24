@@ -88,11 +88,11 @@ var app = {
 
             $("#lang").click(function(){
                 //alert('toto');
-                alert( navigator.globalization.getPreferredLanguage());
-                navigator.globalization.getPreferredLanguage(
-                    function (language) {alert('language: ' + language.value + '\n');},
-                    function () {alert('Error getting language\n');};
+                navigator.globalization.getLocaleName(
+                    function (locale) {alert('locale: ' + locale.value + '\n');},
+                    function () {alert('Error getting locale\n');}
                 );
+
             });
 
     
