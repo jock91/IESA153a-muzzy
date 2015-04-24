@@ -108,7 +108,8 @@ module.exports.metadata =
     "org.apache.cordova.contacts": "0.2.16",
     "org.apache.cordova.device": "0.3.0",
     "org.apache.cordova.network-information": "0.2.15",
-    "org.apache.cordova.splashscreen": "1.0.0"
+    "org.apache.cordova.splashscreen": "1.0.0",
+    "cordova-plugin-geolocation": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

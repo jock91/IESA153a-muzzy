@@ -37,21 +37,16 @@ var app = {
             $("#load").click(function(){
                     var search = $("#mysearch").val();
                     function onSuccess(contacts) {
-                        //alert(contacts.length);
                         for (var i = 0; i < contacts.length; i++) {
                             $("#search").append( "<p class='searching'>Prénom : " + contacts[i].name.givenName + " Nom : " + contacts[i].name.familyName + "</p>" );
                         }
-                        //alert($(".searching").length);
                         $(".searching").click( function(){
-                            //alert('toto');
                             $(this).css({"color" : "#008F00"}).addClass("selected");
                             $("#send").show();
                         });
-
                         $('#send').click(function(){
                             $("#search").html("");
                             $(this).hide();
-                            
                         });
                     };
 
@@ -65,6 +60,30 @@ var app = {
                     filter = ["name"];
                     navigator.contacts.find(filter, onSuccess, onError, options);
                 });
+
+
+            $("#geo").click(function(){
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                function onSuccess(position) {
+                    var element = document.getElementById('geolocation');
+                    element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                                        'Longitude: '          + position.coords.longitude             + '<br />' +
+                                        'Altitude: '           + position.coords.altitude              + '<br />';
+                };
+                function onError(error) {
+                    alert('code: '    + error.code    + '\n' +
+                          'message: ' + error.message + '\n');
+                }
+            });
+
+            $("#lang").click(function(){
+                
+                 navigator.globalization.getPreferredLanguage(
+                    function (language) {alert('language: ' + language.value + '\n');},
+                    function () {alert('Error getting language\n');}
+                );
+            });
+
 
     
     

@@ -41,10 +41,18 @@
             "id": "org.apache.cordova.camera"
         }
     },
-    "org.apache.cordova.geolocation": {
+    "org.apache.cordova.globalization": {
         "source": {
             "type": "registry",
-            "id": "org.apache.cordova.geolocation"
+            "id": "org.apache.cordova.globalization"
         }
+    },
+    "cordova-plugin-geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-geolocation"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
