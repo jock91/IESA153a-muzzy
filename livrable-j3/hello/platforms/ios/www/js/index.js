@@ -111,7 +111,6 @@ var app = {
                           alert("position sauvegarder");
                           status.innerHTML =  msg;
                         });
-
                     };
 
 
