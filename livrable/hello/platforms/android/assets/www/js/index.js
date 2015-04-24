@@ -86,6 +86,15 @@ var app = {
 
             });
 
+            $("#lang").click(function(){
+                //alert('toto');
+                navigator.globalization.getLocaleName(
+                    function (locale) {alert('locale: ' + locale.value + '\n');},
+                    function () {alert('Error getting locale\n');}
+                );
+
+            });
+
     
     
     },
