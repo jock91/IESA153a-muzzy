@@ -6,6 +6,8 @@
 
 Application d’entraide. Elle a pour but de mettre en relation les personnes éméchées sortant de soirée, les gens seuls ou dépressifs, avec leurs amis pour qu'ils puissent rentrer chez eux en toute sécurité.
 
+Application support. It aims to connect emerging Muzzy people came in from a party/night-clubs, People alone or depressed people, with their friends so they can go home safely.
+
 ## Installation
 
 * Github du projet : https://github.com/jock91/IESA153a-muzzy.git
