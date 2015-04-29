@@ -4,8 +4,10 @@
 
 # Pitch de l'application
 
+Fr
 Application d’entraide. Elle a pour but de mettre en relation les personnes éméchées sortant de soirée, les gens seuls ou dépressifs, avec leurs amis pour qu'ils puissent rentrer chez eux en toute sécurité.
 
+En
 Application support. It aims to connect emerging Muzzy people came in from a party/night-clubs, People alone or depressed people, with their friends so they can go home safely.
 
 ## Installation
@@ -14,7 +16,7 @@ Application support. It aims to connect emerging Muzzy people came in from a par
 
 ### Installation du site
 
-* Se créer un dossier
+* Se créer un dossier / Create a folder
 
 * Cloner le projet en local / Clone the project locally :
 ```html
@@ -25,7 +27,6 @@ Application support. It aims to connect emerging Muzzy people came in from a par
 qui se trouve dans livrable-j4 > hello > platforms > ios > "Muzzy.xcodeproj"
 
 ## Quelques commande git / some useful git command
-
 
 1. Créez votre fonction branche / Create your feature branch: `git checkout -b my-new-feature`
 2. Commit vos changement / Commit your changes: `git commit -am 'Add some feature'`
@@ -38,7 +39,7 @@ Perazic Elvis - Desperries Kevin - Erichris - Rguibi Siam - Ridard Maëva
 
 ## License
 
-Open source - Gratuit
+Gratuit-Open source
 
 
 ## Blocages :
