@@ -37,7 +37,7 @@ var app = {
         StatusBar.hide();
 
 
-            var logToDom = function (message) {
+           /* var logToDom = function (message) {
                 var e = document.createElement('label');
                 e.innerText = message;
 
@@ -58,26 +58,31 @@ var app = {
 
                 cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: '
                     + JSON.stringify(pluginResult));
-                alert('determinate state for region');
             };
 
             delegate.didStartMonitoringForRegion = function (pluginResult) {
-                console.log('didStartMonitoringForRegion:', pluginResult);
+                //console.log('didStartMonitoringForRegion:', pluginResult);
 
                 logToDom('didStartMonitoringForRegion:' + JSON.stringify(pluginResult));
-                alert('start minitoring for region');
             };
 
             delegate.didRangeBeaconsInRegion = function (pluginResult) {
                 logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-                alert('did beacons in region');
+                var beaconsFound = pluginResult.beacons;
+
+                if ( beaconsFound && beaconsFound.length>0) {
+                    alert('true');
+                } else if (beaconsFound && beaconsFound.length <= 0) {
+                    alert("false");
+                }
+
             };
 
             var uuid = '17586a9d-1fd4-4b05-8a50-ac08b6fdc91c';
-            var identifier = 'iBKS';
+            var id = 'iBKS';
             var minor = 1;
-            var major = 3;
-            var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid, major, minor);
+            var major = 5000;
+            var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(id, uuid, major, minor);
 
             cordova.plugins.locationManager.setDelegate(delegate);
 
@@ -87,8 +92,7 @@ var app = {
 
             cordova.plugins.locationManager.startMonitoringForRegion(beaconRegion)
                 .fail(console.error)
-                .done();
-
+                .done();*/
 
             $("#load").click(function(){
                     var search = $("#mysearch").val();
@@ -141,7 +145,6 @@ var app = {
                     function () {alert('Error getting language\n');}
                 );
             });
-
                 $("#geo").click(function(){
                     navigator.geolocation.getCurrentPosition(onSuccess, onError);
           
@@ -164,19 +167,13 @@ var app = {
                           status.innerHTML =  msg;
                         });
                     };
-
-
                     // onError Callback receives a PositionError object
                     //
                     function onError(error) {
                         alert('code: '    + error.code    + '\n' +
                               'message: ' + error.message + '\n');
                     }
-
         });
-
-
-    
     
     },
     // Update DOM on a Received Event

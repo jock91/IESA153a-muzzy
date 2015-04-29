@@ -37,7 +37,62 @@ var app = {
         StatusBar.hide();
 
 
-          
+           /* var logToDom = function (message) {
+                var e = document.createElement('label');
+                e.innerText = message;
+
+                var br = document.createElement('br');
+                var br2 = document.createElement('br');
+                document.body.appendChild(e);
+                document.body.appendChild(br);
+                document.body.appendChild(br2);
+
+                window.scrollTo(0, window.document.height);
+            };
+
+            var delegate = new cordova.plugins.locationManager.Delegate();
+
+            delegate.didDetermineStateForRegion = function (pluginResult) {
+
+                logToDom('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+
+                cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: '
+                    + JSON.stringify(pluginResult));
+            };
+
+            delegate.didStartMonitoringForRegion = function (pluginResult) {
+                //console.log('didStartMonitoringForRegion:', pluginResult);
+
+                logToDom('didStartMonitoringForRegion:' + JSON.stringify(pluginResult));
+            };
+
+            delegate.didRangeBeaconsInRegion = function (pluginResult) {
+                logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+                var beaconsFound = pluginResult.beacons;
+
+                if ( beaconsFound && beaconsFound.length>0) {
+                    alert('true');
+                } else if (beaconsFound && beaconsFound.length <= 0) {
+                    alert("false");
+                }
+
+            };
+
+            var uuid = '17586a9d-1fd4-4b05-8a50-ac08b6fdc91c';
+            var id = 'iBKS';
+            var minor = 1;
+            var major = 5000;
+            var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(id, uuid, major, minor);
+
+            cordova.plugins.locationManager.setDelegate(delegate);
+
+            // required in iOS 8+
+            cordova.plugins.locationManager.requestWhenInUseAuthorization(); 
+            // or cordova.plugins.locationManager.requestAlwaysAuthorization()
+
+            cordova.plugins.locationManager.startMonitoringForRegion(beaconRegion)
+                .fail(console.error)
+                .done();*/
 
             $("#load").click(function(){
                     var search = $("#mysearch").val();
@@ -90,7 +145,6 @@ var app = {
                     function () {alert('Error getting language\n');}
                 );
             });
-
                 $("#geo").click(function(){
                     navigator.geolocation.getCurrentPosition(onSuccess, onError);
           
@@ -113,19 +167,13 @@ var app = {
                           status.innerHTML =  msg;
                         });
                     };
-
-
                     // onError Callback receives a PositionError object
                     //
                     function onError(error) {
                         alert('code: '    + error.code    + '\n' +
                               'message: ' + error.message + '\n');
                     }
-
         });
-
-
-    
     
     },
     // Update DOM on a Received Event
