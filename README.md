@@ -1,8 +1,42 @@
-# muzzy
+# Nom du Projet / Project name
 
-## Pitch de l'app : 
+Muzzy 
 
-Muzzy est une application pour les personnes dans un état second, aveugles, en détresse, etc, qui ont besoin d'aide. Cette aide consiste à se géolocaliser et à partager sa position mais aussi envoyer des photos à ses contacts afin qu’ils rentrent chez eux en sécurité et accompagné. 
+## Installation
+
+* Github du projet : https://github.com/jock91/IESA153a-muzzy.git
+
+### Installation du site
+
+* Se créer un dossier
+
+* Cloner le projet en local :
+```html
+git clone https://github.com/jock91/IESA153a-muzzy.git**
+```
+
+* Ouvrir le projet **Muzzy.xcodeproj**
+qui se trouve dans livrable-j4 > hello > platforms > ios > "Muzzy.xcodeproj"
+
+
+## Usage
+
+Application d’entreaide. Elle a pour but de mettre en relation les personnes éméchées sortant de soirée, les gens seuls ou dépressifs, avec leurs amis pour qu'ils puissent rentrer chez eux en toute sécurité
+
+## Quelques commande git
+
+1. Créez votre fonction branche / Create your feature branch: `git checkout -b my-new-feature`
+2. Commit vos changement / Commit your changes: `git commit -am 'Add some feature'`
+3. Push à la branche / Push to the branch: `git push origin my-new-feature`
+4. Soumettre une demande de traction / Submit a pull request `git pull`
+
+## Credits / Participants
+
+M. Perazic Elvis - M. Desperries Kevin - Erichris - Mlle Rguibi Siam - Mlle Ridard Maëva
+
+## License
+
+Open source - Gratuit
 
 
 ## Blocages :
@@ -22,3 +56,4 @@ Muzzy est une application pour les personnes dans un état second, aveugles, en 
 * La géolocalisation
 * Erreur de plugin splash screen
 * Caméra Android
+
