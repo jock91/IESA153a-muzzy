@@ -1,6 +1,10 @@
 # Nom du Projet / Project name
 
-Muzzy 
+#Muzzy 
+
+## Pitch de l'application
+
+Application d’entraide. Elle a pour but de mettre en relation les personnes éméchées sortant de soirée, les gens seuls ou dépressifs, avec leurs amis pour qu'ils puissent rentrer chez eux en toute sécurité.
 
 ## Installation
 
@@ -12,16 +16,11 @@ Muzzy
 
 * Cloner le projet en local :
 ```html
-git clone https://github.com/jock91/IESA153a-muzzy.git**
+**git clone https://github.com/jock91/IESA153a-muzzy.git**
 ```
 
 * Ouvrir le projet **Muzzy.xcodeproj**
 qui se trouve dans livrable-j4 > hello > platforms > ios > "Muzzy.xcodeproj"
-
-
-## Usage
-
-Application d’entreaide. Elle a pour but de mettre en relation les personnes éméchées sortant de soirée, les gens seuls ou dépressifs, avec leurs amis pour qu'ils puissent rentrer chez eux en toute sécurité
 
 ## Quelques commande git
 
@@ -32,7 +31,7 @@ Application d’entreaide. Elle a pour but de mettre en relation les personnes �
 
 ## Credits / Participants
 
-M. Perazic Elvis - M. Desperries Kevin - Erichris - Mlle Rguibi Siam - Mlle Ridard Maëva
+Perazic Elvis - Desperries Kevin - Erichris - Rguibi Siam - Ridard Maëva
 
 ## License
 
