@@ -2,7 +2,7 @@
 
 #Muzzy 
 
-## Pitch de l'application
+# Pitch de l'application
 
 Application d’entraide. Elle a pour but de mettre en relation les personnes éméchées sortant de soirée, les gens seuls ou dépressifs, avec leurs amis pour qu'ils puissent rentrer chez eux en toute sécurité.
 
@@ -14,15 +14,16 @@ Application d’entraide. Elle a pour but de mettre en relation les personnes é
 
 * Se créer un dossier
 
-* Cloner le projet en local :
+* Cloner le projet en local / Clone the project locally :
 ```html
 **git clone https://github.com/jock91/IESA153a-muzzy.git**
 ```
 
-* Ouvrir le projet **Muzzy.xcodeproj**
+* Ouvrir le projet / Open the project **Muzzy.xcodeproj**
 qui se trouve dans livrable-j4 > hello > platforms > ios > "Muzzy.xcodeproj"
 
-## Quelques commande git
+## Quelques commande git / some useful git command
+
 
 1. Créez votre fonction branche / Create your feature branch: `git checkout -b my-new-feature`
 2. Commit vos changement / Commit your changes: `git commit -am 'Add some feature'`
