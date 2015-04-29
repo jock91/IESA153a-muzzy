@@ -24,18 +24,18 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
-    <icon density="ldpi" src="Resources/android/drawable-ldpi/icon.png" />
-    <icon density="mdpi" src="Resources/android/drawable-mdpi/icon.png" />
-    <icon density="hdpi" src="Resources/android/drawable-hdpi/icon.png" />
-    <icon density="xhdpi" src="Resources/android/drawable-xhdpi/icon.png" />
-    <splash density="land-hdpi" src="Resources/android/drawable-land-hdpi/screen.png" />
-    <splash density="land-ldpi" src="Resources/android/drawable-land-ldpi/screen.png" />
-    <splash density="land-mdpi" src="Resources/android/drawable-land-mdpi/screen.png" />
-    <splash density="land-xhdpi" src="Resources/android/drawable-land-xhdpi/screen.png" />
-    <splash density="port-hdpi" src="Resources/android/drawable-port-hdpi/screen.png" />
-    <splash density="port-ldpi" src="Resources/android/drawable-port-ldpi/screen.png" />
-    <splash density="port-mdpi" src="Resources/android/drawable-port-mdpi/screen.png" />
-    <splash density="port-xhdpi" src="Resources/android/drawable-port-xhdpi/screen.png" />
+    <icon density="ldpi" src="Resources/android/icons/ldpi.png" />
+    <icon density="mdpi" src="Resources/android/icons/mdpi.png" />
+    <icon density="hdpi" src="Resources/android/icons/hdpi.png" />
+    <icon density="xhdpi" src="Resources/android/icons/xhdpi.png" />
+    <splash density="land-hdpi" src="Resources/android/splash/splash-land-hdpi.png" />
+    <splash density="land-ldpi" src="Resources/android/splash/splash-land-ldpi.png" />
+    <splash density="land-mdpi" src="Resources/android/splash/splash-land-mdpi.png" />
+    <splash density="land-xhdpi" src="Resources/android/splash/splash-land-xhdpi.png" />
+    <splash density="port-hdpi" src="Resources/android/splash/splash-port-hdpi.png" />
+    <splash density="port-ldpi" src="Resources/android/splash/splash-port-ldpi.png" />
+    <splash density="port-mdpi" src="Resources/android/splash/splash-port-mdpi.png" />
+    <splash density="port-xhdpi" src="Resources/android/splash/splash-port-xhdpi.png" />
     <name>Muzzy</name>
     <description>
 				A sample Apache Cordova application that responds to the deviceready event.
@@ -45,4 +45,9 @@
 		</author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="1000" />
+    <feature name="LocationManager">
+        <param name="android-package" value="com.unarin.cordova.beacon.LocationManager" />
+    </feature>
 </widget>

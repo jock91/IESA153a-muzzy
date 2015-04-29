@@ -80,4 +80,7 @@
     </feature>
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <feature name="LocationManager">
+        <param name="ios-package" value="CDVLocationManager" />
+    </feature>
 </widget>

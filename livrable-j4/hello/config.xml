@@ -9,7 +9,8 @@
 		</author>
 		<content src="index.html" />
 		<access origin="*" />
-		<engine name="ios" version="3.8.0" />
+		<preference name="SplashScreen" value="screen" />
+		<preference name="SplashScreenDelay" value="1000" />
 		<platform name="ios">
 			<!-- iOS 8.0+ -->
 			<!-- iPhone 6 Plus  -->
@@ -54,19 +55,24 @@
 			</feature>
 		 </platform>
 		 <platform name="android">
-            <icon src="Resources/android/drawable-ldpi/icon.png" density="ldpi" />
-            <icon src="Resources/android/drawable-mdpi/icon.png" density="mdpi" />
-            <icon src="Resources/android/drawable-hdpi/icon.png" density="hdpi" />
-            <icon src="Resources/android/drawable-xhdpi/icon.png" density="xhdpi" />
+            <icon src="Resources/android/icons/ldpi.png" density="ldpi" />
+            <icon src="Resources/android/icons/mdpi.png" density="mdpi" />
+            <icon src="Resources/android/icons/hdpi.png" density="hdpi" />
+            <icon src="Resources/android/icons/xhdpi.png" density="xhdpi" />
 
-            <splash src="Resources/android/drawable-land-hdpi/screen.png" density="land-hdpi"/>
-		    <splash src="Resources/android/drawable-land-ldpi/screen.png" density="land-ldpi"/>
-		    <splash src="Resources/android/drawable-land-mdpi/screen.png" density="land-mdpi"/>
-		    <splash src="Resources/android/drawable-land-xhdpi/screen.png" density="land-xhdpi"/>
+            <!-- you can use any density that exists in the Android project -->
+		    <splash src="Resources/android/splash/splash-land-hdpi.png" density="land-hdpi"/>
+		    <splash src="Resources/android/splash/splash-land-ldpi.png" density="land-ldpi"/>
+		    <splash src="Resources/android/splash/splash-land-mdpi.png" density="land-mdpi"/>
+		    <splash src="Resources/android/splash/splash-land-xhdpi.png" density="land-xhdpi"/>
 
-		    <splash src="Resources/android/drawable-port-hdpi/screen.png" density="port-hdpi"/>
-		    <splash src="Resources/android/drawable-port-ldpi/screen.png" density="port-ldpi"/>
-		    <splash src="Resources/android/drawable-port-mdpi/screen.png" density="port-mdpi"/>
-		    <splash src="Resources/android/drawable-port-xhdpi/screen.png" density="port-xhdpi"/>
+		    <splash src="Resources/android/splash/splash-port-hdpi.png" density="port-hdpi"/>
+		    <splash src="Resources/android/splash/splash-port-ldpi.png" density="port-ldpi"/>
+		    <splash src="Resources/android/splash/splash-port-mdpi.png" density="port-mdpi"/>
+		    <splash src="Resources/android/splash/splash-port-xhdpi.png" density="port-xhdpi"/>
+		    <feature name="SplashScreen">
+			    <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+
+			</feature>
      </platform>
 </widget>
