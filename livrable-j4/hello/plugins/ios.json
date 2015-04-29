@@ -16,7 +16,7 @@
                     "CoreLocation.framework": [
                         {
                             "xml": false,
-                            "count": 2
+                            "count": 3
                         }
                     ],
                     "CoreGraphics.framework": [
@@ -55,7 +55,12 @@
                             "count": 1
                         }
                     ],
-                    "CoreBluetooth.framework": []
+                    "CoreBluetooth.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ]
                 }
             },
             "config.xml": {
@@ -108,6 +113,10 @@
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"LocationManager\"><param name=\"ios-package\" value=\"CDVLocationManager\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -118,9 +127,18 @@
                         {
                             "xml": "<string />",
                             "count": 2
+                        },
+                        {
+                            "xml": "<string>This app would like to scan for iBeacons while it is in use.</string>",
+                            "count": 1
                         }
                     ],
-                    "NSLocationAlwaysUsageDescription": []
+                    "NSLocationAlwaysUsageDescription": [
+                        {
+                            "xml": "<string>This app would like to scan for iBeacons even when in the background.</string>",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         }
@@ -151,6 +169,9 @@
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         },
         "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "ch.inagua.training.phonegap"
+        },
+        "com.unarin.cordova.beacon": {
             "PACKAGE_NAME": "ch.inagua.training.phonegap"
         }
     },

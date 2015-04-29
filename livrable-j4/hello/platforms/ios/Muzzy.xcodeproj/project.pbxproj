@@ -57,6 +57,10 @@
 		03A88B9366744D459979863B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9554A3050EFD422181E13534 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C05910B819FA46DD8B5DFFF8 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 298C51D2EC9745C69B784962 /* CDVSplashScreen.m */; };
 		207DEC3EE0AE4B78B134F250 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EDBA722145904C72960C83DC /* CDVStatusBar.m */; };
+		31BED34BE32A44F39C98D81F /* CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA982CB9BB0E4A4BA29DD21F /* CDVLocationManager.m */; };
+		63D80276587044DFAA784EC7 /* AppDelegate+CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F519EC74749B418CAD6B95E4 /* AppDelegate+CDVLocationManager.m */; };
+		0084EDA1C10A42278F16B422 /* LMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A180C140F4377B2D54A89 /* LMLogger.m */; };
+		04C092208C254EECA5323D3E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28140D87B6E54900AF673DDC /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +158,13 @@
 		53216238535A4040B877B02C /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		EDBA722145904C72960C83DC /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		2AFA840277024E84BEB92D7A /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		EA982CB9BB0E4A4BA29DD21F /* CDVLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocationManager.m"; path = "com.unarin.cordova.beacon/CDVLocationManager.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		F519EC74749B418CAD6B95E4 /* AppDelegate+CDVLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate+CDVLocationManager.m"; path = "com.unarin.cordova.beacon/AppDelegate+CDVLocationManager.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		CE3A180C140F4377B2D54A89 /* LMLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LMLogger.m"; path = "com.unarin.cordova.beacon/LMLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		7849BC3EE2E34BC3B4C11D86 /* CDVLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocationManager.h"; path = "com.unarin.cordova.beacon/CDVLocationManager.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		D864E04104D5463BBFBAA4AC /* AppDelegate+CDVLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+CDVLocationManager.h"; path = "com.unarin.cordova.beacon/AppDelegate+CDVLocationManager.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		7C3442B360E0442C81EA30D2 /* LMLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LMLogger.h"; path = "com.unarin.cordova.beacon/LMLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		28140D87B6E54900AF673DDC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +181,7 @@
 				459D08DEA7704C0EA01F90F9 /* AddressBook.framework in Frameworks */,
 				30DA66D457144369813DF32D /* AddressBookUI.framework in Frameworks */,
 				03A88B9366744D459979863B /* SystemConfiguration.framework in Frameworks */,
+				04C092208C254EECA5323D3E /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +259,7 @@
 				089C6A85003A4A1F997BDC7C /* AddressBook.framework */,
 				3D14B2C5BD2A4F0897327D26 /* AddressBookUI.framework */,
 				9554A3050EFD422181E13534 /* SystemConfiguration.framework */,
+				28140D87B6E54900AF673DDC /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -289,6 +302,12 @@
 				53216238535A4040B877B02C /* CDVSplashScreen.h */,
 				EDBA722145904C72960C83DC /* CDVStatusBar.m */,
 				2AFA840277024E84BEB92D7A /* CDVStatusBar.h */,
+				EA982CB9BB0E4A4BA29DD21F /* CDVLocationManager.m */,
+				F519EC74749B418CAD6B95E4 /* AppDelegate+CDVLocationManager.m */,
+				CE3A180C140F4377B2D54A89 /* LMLogger.m */,
+				7849BC3EE2E34BC3B4C11D86 /* CDVLocationManager.h */,
+				D864E04104D5463BBFBAA4AC /* AppDelegate+CDVLocationManager.h */,
+				7C3442B360E0442C81EA30D2 /* LMLogger.h */,
 			);
 			name = Plugins;
 			path = "Muzzy/Plugins";
@@ -486,6 +505,9 @@
 				05F926248A2F4CA8B3EDA5EC /* CDVReachability.m in Sources */,
 				C05910B819FA46DD8B5DFFF8 /* CDVSplashScreen.m in Sources */,
 				207DEC3EE0AE4B78B134F250 /* CDVStatusBar.m in Sources */,
+				31BED34BE32A44F39C98D81F /* CDVLocationManager.m in Sources */,
+				63D80276587044DFAA784EC7 /* AppDelegate+CDVLocationManager.m in Sources */,
+				0084EDA1C10A42278F16B422 /* LMLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

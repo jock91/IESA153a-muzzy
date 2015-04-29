@@ -36,6 +36,38 @@ var app = {
 
         StatusBar.hide();
 
+        var delegate = new cordova.plugins.locationManager.Delegate();
+
+        delegate.didDetermineStateForRegion = function (pluginResult) {
+
+            cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+
+        };
+
+        delegate.didStartMonitoringForRegion = function (pluginResult) {alert('did start')};
+
+        delegate.didRangeBeaconsInRegion = function(pluginResult) {
+
+            var beaconsFound = pluginResult.beacons;
+
+            if ( beaconsFound && beaconsFound.length>0 ) { 
+                alert('beacons dans la zone :D');
+            }
+
+        };
+        var id = 'iBKS';
+
+        var uuid = '17586a9d-1fd4-4b05-8a50-ac08b6fdc91c';
+
+        var minor = 1; var major = 3;
+
+        var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(id, uuid, major, minor);
+
+        cordova.plugins.locationManager.setDelegate(delegate);
+
+        cordova.plugins.locationManager.requestAlwaysAuthorization();
+
+        cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion).fail(console.error).done();
 
            /* var logToDom = function (message) {
                 var e = document.createElement('label');
@@ -163,7 +195,7 @@ var app = {
                           tx.executeSql('INSERT INTO GEOLOCALISATION (id, latitude, longitude, altitude)) VALUES (1, "2,36, "7,645", "0")');
                           tx.executeSql('INSERT INTO GEOLOCALISATION (id, latitude, longitude, altitude)) VALUES (2, "3048, "79,45", "1")');
                           msg = '<p>Geolocalition message created and row inserted.</p>';
-                          alert("position sauvegarder");
+                          alert("position sauvegardée");
                           status.innerHTML =  msg;
                         });
                     };

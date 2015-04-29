@@ -46,6 +46,9 @@
     </feature>
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <feature name="LocationManager">
+        <param name="ios-package" value="CDVLocationManager" />
+    </feature>
     <icon height="180" src="Resources/ios/icons/icon-60@3x.png" width="180" />
     <icon height="60" src="Resources/ios/icons/icon-60.png" width="60" />
     <icon height="120" src="Resources/ios/icons/icon-60@2x.png" width="120" />

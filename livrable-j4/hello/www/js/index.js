@@ -36,6 +36,41 @@ var app = {
 
         StatusBar.hide();
 
+        var delegate = new cordova.plugins.locationManager.Delegate();
+
+        delegate.didDetermineStateForRegion = function (pluginResult) {
+
+            cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+
+        };
+
+        delegate.didStartMonitoringForRegion = function (pluginResult) {alert('did start')};
+
+        delegate.didRangeBeaconsInRegion = function(pluginResult) {
+
+            var beaconsFound = pluginResult.beacons;
+
+            if ( beaconsFound && beaconsFound.length>0 ) { 
+                
+                setTimeout(function() {
+                    alert('beacons dans la zone');
+                }, 2000);
+            }
+
+        };
+        var id = 'iBKS';
+
+        var uuid = '17586a9d-1fd4-4b05-8a50-ac08b6fdc91c';
+
+        var minor = 1; var major = 3;
+
+        var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(id, uuid, major, minor);
+
+        cordova.plugins.locationManager.setDelegate(delegate);
+
+        cordova.plugins.locationManager.requestAlwaysAuthorization();
+
+        cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion).fail(console.error).done();
 
            /* var logToDom = function (message) {
                 var e = document.createElement('label');

@@ -24,6 +24,9 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="LocationManager">
+        <param name="android-package" value="com.unarin.cordova.beacon.LocationManager" />
+    </feature>
     <icon density="ldpi" src="Resources/android/icons/ldpi.png" />
     <icon density="mdpi" src="Resources/android/icons/mdpi.png" />
     <icon density="hdpi" src="Resources/android/icons/hdpi.png" />
