@@ -33,7 +33,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+
         StatusBar.hide();
+
+
+          
 
             $("#load").click(function(){
                     var search = $("#mysearch").val();
@@ -61,9 +65,6 @@ var app = {
                     filter = ["name"];
                     navigator.contacts.find(filter, onSuccess, onError, options);
                 });
-
-
-           
 
             $("#lang").click(function(){
                 

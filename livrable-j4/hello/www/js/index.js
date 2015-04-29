@@ -36,6 +36,9 @@ var app = {
 
         StatusBar.hide();
 
+
+          
+
             $("#load").click(function(){
                     var search = $("#mysearch").val();
                     function onSuccess(contacts) {
