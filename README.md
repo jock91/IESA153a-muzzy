@@ -56,17 +56,17 @@ Le local storage nous a poser beaucoup de problème incompréhensions face à ce
 Problème rencontrer par api :
 
 * Contact
-	        Quelques problèmes sur Android, le plugin contact n’étais pas compilé par cordova.
+Quelques problèmes sur Android, le plugin contact n’étais pas compilé par cordova.
 
-* Géolocation
-		Ne marchait pas sur l’émulateur Android Studio.
+* Géolocalisation
+Ne marchait pas sur l’émulateur Android Studio.
 
 * Caméra
-		Cordova ne compilé pas le plugin sur les deux platforms.		
+Cordova ne compilé pas le plugin sur les deux platforms.		
 
 * Globalization
-                Déploiement sur Android et comment changer les textes français en anglais.
+Déploiement sur Android et comment changer les textes français en anglais.
 
 * Splashcreen
-		activation sous android.
+activation sous android.
 
