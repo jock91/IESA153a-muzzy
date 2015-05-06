@@ -56,11 +56,11 @@ Le local storage nous a poser beaucoup de problème incompréhensions face à ce
 Problème rencontrer par api :
 
 * Contact
-* 
+ 
 Quelques problèmes sur Android, le plugin contact n’étais pas compilé par cordova.
 
 * Géolocalisation
-* 
+
 Ne marchait pas sur l’émulateur Android Studio.
 
 * Caméra
