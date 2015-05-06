@@ -24,7 +24,7 @@ Application support. It aims to connect emerging **Muzzy people** came out from 
 ```
 
 * Ouvrir le projet / Open the project **Muzzy.xcodeproj**
-qui se trouve dans livrable-j4 > hello > platforms > ios > "Muzzy.xcodeproj"
+qui se trouve dans MUZZY > hello > platforms > ios > "Muzzy.xcodeproj"
 
 ## Quelques commande git / some useful git command
 
