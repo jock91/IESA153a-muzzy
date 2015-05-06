@@ -42,21 +42,31 @@ Perazic Elvis - Desperries Kevin - Erichris - Rguibi Siam - Ridard Maëva
 Gratuit-Open source
 
 
-## Blocages :
+## Blocages rencontrer : 
+Dans l’ensemble certains plugin ne fonctionnais pas sur Android car Cordova ne les compilés pas.
 
-* Rendre l'application bilingue
-* Certaines fonctionnalités ne fonctionnent pas sur Android
-* Impossible de tester sur un téléphone
-* Quelques incompréhensions pour la réalisation du Business Model Canvas
-* Problèmes avec Analytics --> pas de retour de données
-* Pas eu le temps de faire la fonctionnalité "Accès remote"
-* Blocage Géolocalisation —> Au niveau de l’insertion dans la BDD, quel est la value à insérer, position.coords.latitude ou autre ?
-* Storage, pas vraiment un plugin, apparemment déjà sur le téléphone … 
-* Où se trouve la BDD dans le téléphone ?
-* Dois-je utiliser Storage qui est « intégré » au téléphone ou SQLite plugin ?
-* Pouvoir afficher les anciennes coordonnées, blocage au niveau du SELECT
-* Simulateur Android affiche 
-* La géolocalisation
-* Erreur de plugin splash screen
-* Caméra Android
+Nous avons eu du mal à faire fonctionner l’émulateur d’Android Studio et installer l’app sur un smartphone. 
+
+Quelques incompréhensions pour la réalisation du Business Model Canvas.
+
+Google analystics ne fournissait aucun retour.
+
+Le local storage nous a poser beaucoup de problème incompréhensions face à celui-ci qui est en natif sur les téléphones manque de documentation sur les méthodes de stockages et la récupération de données 
+
+Problème rencontrer par api :
+
+Contact
+	Quelques problèmes sur Android, le plugin contact n’étais pas compilé par cordova.
+
+Géolocation
+		Ne marchait pas sur l’émulateur Android Studio.
+
+Caméra
+		Cordova ne compilé pas le plugin sur les deux platforms.		
+
+Globalization
+Déploiement sur Android et comment changer les textes français en anglais.
+
+splashcreen
+		activation sous android.
 
