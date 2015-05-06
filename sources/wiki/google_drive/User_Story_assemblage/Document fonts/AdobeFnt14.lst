@@ -1,0 +1,79 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Light
+FamilyName:Lato
+StyleName:Light
+MenuName:Lato Light
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:0
+FullName:Lato Light
+WritingScript:Roman
+OutlineFileName:\Lato-Light.ttf
+DataFormat:sfntData
+FileLength:620084
+FileModTime:1409539218
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Regular
+FamilyName:Lato
+StyleName:Regular
+MenuName:Lato
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Lato Regular
+WritingScript:Roman
+OutlineFileName:\Lato-Regular.ttf
+DataFormat:sfntData
+FileLength:632632
+FileModTime:1409539220
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Thin
+FamilyName:Lato
+StyleName:Thin
+MenuName:Lato Thin
+StyleBits:0
+WeightClass:275
+WidthClass:5
+AngleClass:0
+FullName:Lato Thin
+WritingScript:Roman
+OutlineFileName:\Lato-Thin.ttf
+DataFormat:sfntData
+FileLength:602232
+FileModTime:1409539221
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-Semibold
+FamilyName:Open Sans
+StyleName:Semibold
+MenuName:Open Sans Semibold
+StyleBits:0
+WeightClass:600
+WidthClass:5
+AngleClass:0
+FullName:Open Sans Semibold
+WritingScript:Roman
+OutlineFileName:\OpenSans-Semibold.ttf
+DataFormat:sfntData
+FileLength:221328
+FileModTime:1370358722
+%EndFont
+

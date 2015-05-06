@@ -1,0 +1,88 @@
+INSTRUCTIONS D'IMPRESSION ADOBE INDESIGN POUR LE RAPPORT DU PRESTATAIRE DE SERVICES
+
+NOM DE LA COMPOSITION : #12_User_Story.indd
+
+DATE D'ASSEMBLAGE : 01/05/2015 11:31
+Date de création : 01/05/2015
+Date de modification : 01/05/2015
+
+INFORMATIONS DE CONTACT
+
+Nom de la société : 
+Contact : 
+Adresse : 
+
+
+
+
+
+Téléphone : 
+Télécopie : 
+Adresse électronique : 
+
+INSTRUCTIONS SPECIALES ET AUTRES REMARQUES
+
+
+
+
+
+
+Modules externes 0
+Objets non opaques :Sans
+
+POLICES
+4 Police(s) utilisée(s); 0 Manquant(e)(s), 0 Incorporé(e)(s), 0 Incomplète(s), 0 Protégée(s)
+
+Polices assemblées
+- Nom : Lato-Light; Type : TrueType, Etat : OK
+- Nom : Lato-Regular; Type : TrueType, Etat : OK
+- Nom : Lato-Thin; Type : TrueType, Etat : OK
+- Nom : OpenSans-Semibold; Type : OpenType TrueType, Etat : OK
+
+
+COULEURS ET ENCRES
+4 Encre(s) quadri; 0 Encre(s) de tons directs
+
+- Nom et type : Cyan quadri; Angle : 75,000; Lignes/pouce : 70,000
+- Nom et type : Magenta quadri; Angle : 15,000; Lignes/pouce : 70,000
+- Nom et type : Jaune quadri; Angle : 0,000; Lignes/pouce : 70,000
+- Nom et type : Noir quadri; Angle : 45,000; Lignes/pouce : 70,000
+
+
+LIENS ET IMAGES
+(Liens manquants et incorporés uniquement)
+Liens et images : 0 Lien(s) détecté(s); 0 Modifié(s), 0 Manquant(e)(s) 0 Inaccessible
+Images : 0 Incorporé(e)(s), 0 utilisant l'espace colorimétrique RVB
+
+PARAMETRES D'IMPRESSION
+PPD : Indépendant du périphérique, (Fichier PostScript®)
+Impression sur : Fichier de prépresse
+Nombre de copies : 1
+Planches : Non
+Pages paires/impaires : Les deux
+Pages : Toutes
+Epreuve : Non
+Mosaïque : Sans
+Echelle : 100 %, 100 %
+Position de la page : En haut, à gauche
+Imprimer les calques : Calques visibles et imprimables
+Marques d'imprimeur : Sans
+Fond perdu : 0 px, 0 px, 0 px, 0 px
+Couleur : CMJN composite
+Mode de recouvrement : Sans
+Envoi des données d'images : Tous
+Substitution d'image OPI/DCS : Non
+Format de page : 800 x 600
+Dimensions du papier : 0 px x 0 px
+Orientation : Portrait
+Négatif : Non
+Symétrie : Désactivée
+
+
+LISTE DES FICHIERS DE L'ENVOI
+
+1. #12_User_Story.indd; type : Composition Adobe InDesign; taille : 768K
+2. Lato-Light.ttf; type : Fichier de polices; taille : 605K
+3. Lato-Regular.ttf; type : Fichier de polices; taille : 617K
+4. Lato-Thin.ttf; type : Fichier de polices; taille : 588K
+5. OpenSans-Semibold.ttf; type : Fichier de polices; taille : 216K
