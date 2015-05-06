@@ -35,7 +35,7 @@ qui se trouve dans livrable-j4 > hello > platforms > ios > "Muzzy.xcodeproj"
 
 ## Credits / Participants
 
-Perazic Elvis - Desperries Kevin - Erichris - Rguibi Siam - Ridard Maëva
+Perazic Elvis - Desperries Kevin - Erichris - Rguibi Siham - Ridard Maëva
 
 ## License
 
